@@ -1,0 +1,27 @@
+
+# Nothing Island OS — single-file GitHub Actions builder
+# Сохрани этот файл как .github/workflows/nothing-island.yml
+
+name: Build Nothing Island OS APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare embedded Android project
+        env:
+          PROJECT_ZIP_B64: |
+            UEsDBBQAAAAIAGK0cV2EUVnIsAAAACABAAAjAAAATm90aGluZ0lzbGFuZE9TL3NldHRpbmdzLmdy
+            YWRsZS5rdHOVjrEKwjAYhPc8RejULn0AxUFKBUVNaN1LaH5iJP3/kKSCSN/dtqOD4G33cdydd6Ox
+            eFGoDAyAib8ZnxXAU7SJgoXI39wQGQd5seWDegJWczAot3gTlHYg1xZJIS2UT2xiGjygBuxfDURy
+            Y7L0e+ZCGsoIKW++4WF/PHfi2slGnOrq1jW1FG3xz8/1USBKMtAD+lSiGoDveHaldLdojtEp1KLN
+            mMXejRrybKO8zwr2AVBLAwQUAAAACABitHFd+FZSczIAAAAxAAAAGgAAAE5vdGhpbmdJc2xhbmRP
+            Uy8uZ2l0aWdub3JlBcFBCsAwCATA+z7Fg77JRCnClgST/r8z+rQH06AV6Qau6dTda2
